@@ -3,27 +3,19 @@ function Food({ name }) {
   return <div>my name is {name}</div>;
 }
 
-const names = [{ name: "bob" }, { name: "jeong" }, { name: "Lee" }];
+const names = [
+  { id: 0, name: "bob" },
+  { id: 1, name: "jeong" },
+  { id: 2, name: "Lee" },
+];
 
-function App() {
-  return (
-    <div>
-      {names.map((nameString) => {
-        //<Food name={nameString.name} />;
-        return <Food name={nameString.name} />;
-      })}
-    </div>
-  );
+function renderFood(names) {
+  //각각의 element는  구분할수 있는 key값(id)을 가지고 있어야함. 가지지 않을경우 에러뜸
+  return <Food id={names.id} name={names.name} />;
 }
 
-// function App() {
-//   return (
-//     <div>
-//       <Food name="bob" />
-//       <Food name="jeong" />
-//       <Food name="viv" />
-//     </div>
-//   );
-// }
+function App() {
+  return <div>{names.map(renderFood)}</div>;
+}
 
 export default App;
