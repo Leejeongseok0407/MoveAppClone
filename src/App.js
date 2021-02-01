@@ -11,7 +11,7 @@ const names = [
 
 function renderFood(names) {
   //각각의 element는  구분할수 있는 key값(id)을 가지고 있어야함. 가지지 않을경우 에러뜸
-  return <Food id={names.id} name={names.name} />;
+  return <Food key={names.id} name={names.name} />;
 }
 
 function App() {
