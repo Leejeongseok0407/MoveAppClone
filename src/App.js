@@ -1,7 +1,14 @@
+function Food({ name }) {
+  //return (<h3>{props.name}</h3>
+  return <h3>my name is {name}</h3>;
+}
+
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
+      <Food name="bob" />
+      <Food name="jeong" />
+      <Food name="viv" />
     </div>
   );
 }
